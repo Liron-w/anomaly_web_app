@@ -1,7 +1,7 @@
 
 # Anomaly Detection WebApp
 
-link to github - https://github.com/Hila-S/my-web-app/invitations  
+link to github - https://github.com/Liron-w/anomaly_web_app  
 link to an explanatory video - https://youtu.be/o4EUcoQuqkY
 
 ## Summary:
