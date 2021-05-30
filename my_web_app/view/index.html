@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anomaly Detection Server</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: rgb(235, 227, 227);
+            
+        }
+
+        .dot {
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        table {
+            padding: 5%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            border-collapse: collapse;
+            width: 60%;
+            align-self: center;
+        }
+
+        iframe {
+            background-color:rgb(234, 248, 248);
+            margin-left: 20%;
+            width: 60%;
+            padding: 0%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .button {
+            width: 16%;
+            margin-left: 42%;
+            margin-top: 1%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .algo {
+            margin-left: 42%;
+            width: fit-content;
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .font {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .main {
+            width: 60%;
+            float: center;
+            padding: 10px;
+            border: 1px solid black;
+            background-color: rgb(92, 184, 184);
+            margin-left: 20%;
+            margin-top: 15%;
+        }
+
+        td {
+            text-align: center;
+            padding: 8px;
+            background-color:rgb(92, 184, 184);
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        .title {
+            font-size: 345%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+
+        lefthead {
+            float: left;
+            width: 30%;
+            height: 200px;
+            background: #ccc;
+            padding: 0px;
+        }
+
+        righthead {
+            float: left;
+            padding: 20px;
+            width: 70%;
+            background-color: #f1f1f1;
+            height: 200px;
+        }
+
+        leftcon {
+            float: left;
+            width: 58%;
+            padding: 0px;
+        }
+
+        rightcon {
+            float: left;
+            padding: 0px;
+            width: 42%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <lefthead style='font-size:145px; text-align-last:center;'>
+            &#9992;
+        </lefthead>
+        <righthead>
+            <p class="title" style="text-align:center;">Anomaly Detection Server</p>
+        </righthead>
+    </section>
+    <br>
+    <form action="/detectAPI" method="post" enctype="multipart/form-data" name="showAnomalies" target="result">
+        <table class="main">
+            <tr>
+                <td>Upload Normal CSV file</td>
+                <td><input type="file" name="train_file"></td>
+            </tr>
+            <tr>
+                <td>Upload Train CSV file</td>
+                <td><input type="file" name="test_file"></td>
+            </tr>
+            <br>
+        </table>
+        <div class="algo">
+            <p>Please choose an algorithm:</p>
+            <section>
+                <leftcon>
+                    <select class="font" name="algo1" id="chosen_algo">
+                        <option value="hybrid">Hybrid</option>
+                        <option value="regression">Regression</option>
+                    </select>
+                </leftcon>
+                <rightcon>
+                    <input class="font" type="submit" value="Submit">
+                </rightcon>
+            </section>
+        </div>
+        <br>
+    </form>
+    <br>
+    <iframe name="result" width="50%" height="500">
+    </iframe>
+    <br>
+</body>
+
+</html>
